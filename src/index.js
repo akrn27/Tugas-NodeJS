@@ -38,17 +38,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 // Filesystem
 const fs = __importStar(require("fs/promises"));
-const Kabatakur = require("./kabatakur");
+const Variabel_1 = __importDefault(require("./TugasHari3/Variabel"));
+const Looping_1 = __importDefault(require("./TugasHari3/Looping"));
+const TFunction_1 = require("./TugasHari3/TFunction");
+const TArray_1 = require("./TugasHari3/TArray");
+const TObject_1 = require("./TugasHari3/TObject");
+// const Kabatakur = require("./kabatakur");
 const app = (0, express_1.default)();
 const port = 3002;
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const num1 = 10;
-        const num2 = 5;
-        console.log("Addition:", Kabatakur.add(num1, num2));
-        console.log("Subtraction:", Kabatakur.subtract(num1, num2));
-        console.log("Multiplication:", Kabatakur.multiply(num1, num2));
-        console.log('Division:', Kabatakur.divide(num1, num2));
+        // Tugas Hari 2
+        // const num1 = 10;
+        // const num2 = 5;
+        // console.log("Addition:", Kabatakur.add(num1, num2));
+        // console.log("Subtraction:", Kabatakur.subtract(num1, num2));
+        // console.log("Multiplication:", Kabatakur.multiply(num1, num2));
+        // console.log('Division:', Kabatakur.divide(num1, num2));
+        // Tugas Hari 3 Soal 1
+        console.log('Hasil Dr Variabel TugasHari 3');
+        console.log('Soal 1');
+        console.log((0, Variabel_1.default)());
+        // Soal 2
+        // Perbedaan antara var, let dan const adalah var memiliki cakupan fungsional, yang mana var dapat diakses di mana pun dalam fungsi saat var tersebut dideklarasikan. Kalau let mengimplementasikan cakupan blok scope, yang mana let ini hanya dapat diakses di dalam blok kode. Kalau const memiliki cakupan blok scope seperti let namun nilai variable pada const tidak dapat dirubah setelah diinisialisasi.
+        // Soal 3 & 4
+        (0, Looping_1.default)();
+        // Soal 5 & 6
+        (0, TFunction_1.Greet)('Dika');
+        (0, TFunction_1.Add)(5, 6);
+        // Soal 7 & 8
+        (0, TArray_1.Fruit)();
+        (0, TArray_1.MapNumbers)();
+        // Soal 9 & 10
+        (0, TObject_1.ObjPerson)();
+        (0, TObject_1.ArrPeople)();
         const data = yield fs.readFile("./src/latihan-baca-file.txt", "utf8");
         console.log(data);
         res.writeHead(200, { "Content-Type": "text/plain" });
